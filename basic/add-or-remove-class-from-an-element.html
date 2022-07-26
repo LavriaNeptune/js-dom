@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: red;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      .italic {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"><p id="test">示例文本</p></div>
+    <script>
+      const el = document.querySelector('#test');
+      el.classList.add('red', 'bold', 'italic');
+      // 注意:IE11 不支持一次添加多个类...
+      el.classList.remove('red');
+      el.classList.toggle('italic');
+      // toggle 方法表示:如果类存在则移除、如果类不存在则添加...
+    </script>
+  </body>
+</html>

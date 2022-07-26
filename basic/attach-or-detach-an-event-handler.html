@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app"><a href="" id="test">点我点我</a></div>
+    <script>
+      const target = document.querySelector('#test');
+      const handler = function () {
+        alert('你点了我!');
+      };
+      target.addEventListener('click', handler);
+      // 对应的删除事件监听器的方法是 removeEventListener...移除时需注意必须是对应的同种事件的同种回调函数..
+      // target.removeEventListener('click', handler);
+
+      /* 旧式的事件监听器是直接在元素的 on{eventName} 特性上添加回调函数...此种方法仅能添加一个事件回调函数,故不再推荐,参考代码见下 */
+      // target.onclick = function () {};
+      // delete target.onclick;
+    </script>
+  </body>
+</html>

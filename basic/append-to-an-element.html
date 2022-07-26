@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: red;
+        padding: 10px;
+      }
+      p {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <p id="test">Hello</p>
+    <script>
+      const el = document.querySelector('#test');
+      const target = document.querySelector('#app');
+      setTimeout(() => {
+        target.appendChild(el);
+        // 元素的 appendChild 方法:将元素作为目标元素的子节点插入...
+      }, 3000);
+    </script>
+  </body>
+</html>
