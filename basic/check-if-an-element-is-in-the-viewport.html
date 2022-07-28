@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 300px;
+        height: 300px;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const el = document.querySelector('#app');
+      const isInViewport = function (el) {
+        const rect = el.getBoundingClientRect();
+        // getBoundingClientRect 方法会返回一个 DOMRect 对象,提供元素的大小以及相对视口的位置参数
+        return (
+          rect.top >= 0 &&
+          rect.left.left >= 0 &&
+          rect.bottom <=
+            (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.bottom <=
+            (window.innerWidth || document.documentElement.clientWidth)
+        );
+        // 保证测试的盒模型在视口内...
+      };
+    </script>
+  </body>
+</html>
