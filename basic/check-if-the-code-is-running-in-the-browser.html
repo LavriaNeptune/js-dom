@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const isBrowser =
+        typeof window === 'object' && typeof document === 'object';
+      // 如果存在 windows 对象、且存在 document 对象...说明浏览器中有代码在运行...?
+      console.log(isBrowser);
+    </script>
+  </body>
+</html>

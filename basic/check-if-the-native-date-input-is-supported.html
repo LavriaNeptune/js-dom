@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="date" />
+      <p>上方是测试</p>
+    </div>
+    <script>
+      function isDateInputSupported() {
+        const el = document.createElement('input');
+        el.setAttribute('type', 'date');
+        const invalidValue = 'not-a-valid-date';
+        el.setAttribute('value', invalidValue);
+        return el.value !== invalidValue;
+      }
+      // 如果说浏览器支持日期输入...存入其中的非法值将不起作用 -> 默认设置为一个空字符串 -> 自然就不等于远数据...
+      console.log(isDateInputSupported());
+      // PS:其他类似 email、range、url 类型的输入框也可以参照上述方式进行检测...
+    </script>
+  </body>
+</html>
