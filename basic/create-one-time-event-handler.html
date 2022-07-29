@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <p id="test">点击此段文本</p>
+    </div>
+    <script>
+      const el = document.querySelector('#test');
+      el.addEventListener(
+        'click',
+        () => {
+          alert('触发点击事件');
+        },
+        { once: true },
+      );
+      // 很简单,addEventListener 时候传入 { once: true } 作为最后一个参数即可...不过 IE 不支持此选项;IE 选手请自行在 handler 添加移除事件监听器的代码。tip:removeEventListener
+    </script>
+  </body>
+</html>

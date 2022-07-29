@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" />
+      <input type="text" id="target" placeholder="关注此元素是否获取焦点" />
+      <input type="text" />
+    </div>
+    <script>
+      const target = document.querySelector('#target');
+      function getHasFocus() {
+        return target === document.activeElement;
+      }
+      setInterval(() => {
+        console.log(getHasFocus());
+      }, 1000);
+    </script>
+  </body>
+</html>

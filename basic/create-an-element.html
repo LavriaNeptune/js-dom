@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const p = document.createElement('p');
+      const t = document.createTextNode('Hello World!');
+      // 常用节点其实就两种:元素节点、文字节点...
+      const container = document.querySelector('#app');
+      p.appendChild(t);
+      document.querySelector('#app').appendChild(p);
+      // 插入节点必须严格按照顺序来,不能直接插入为组装完成的 p 节点:像这样 document.querySelector('#app').appendChild(p.appendChild(t)); 就不太行...这样直接读取 p.appendChild(t) 中的 p,此时 p 还未插入文字节点...
+    </script>
+  </body>
+</html>
