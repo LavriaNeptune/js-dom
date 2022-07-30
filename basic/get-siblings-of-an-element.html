@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li>one</li>
+        <li id="target">two</li>
+        <li>three</li>
+      </ul>
+    </div>
+    <script>
+      const el = document.querySelector('#target');
+      const prev = el.previousSibling;
+      const next = el.nextSibling;
+      console.log('目标节点的前一个相邻节点:', prev);
+      console.log('目标节点的后一个相邻节点:', next);
+      // 一般来说节点没啥用...获取元素节点才是更为常见的作法,见下
+      // const prevEl = el.previousElementSibling;
+      // const nextEl = el.nextElementSibling;
+    </script>
+  </body>
+</html>

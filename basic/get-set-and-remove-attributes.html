@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #test {
+        width: 200px;
+        height: 200px;
+        border: solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="test">Good</div>
+    </div>
+    <script>
+      const el = document.querySelector('#test');
+      const targetWidth = el.getAttribute('width');
+      console.log(targetWidth);
+      el.setAttribute('style', 'background-color: red');
+      setTimeout(() => {
+        el.removeAttribute('style');
+      }, 3000);
+      // 注意:removeAttribute 方法是用来移除元素自身就存在的属性...如果是通过继承而来的顺序无法移除...比如 width 和 height。
+    </script>
+  </body>
+</html>

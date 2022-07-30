@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <div id="app">
+      <p>Hello World!</p>
+    </div>
+    <script>
+      const el = document.querySelector('#app');
+      const html = el.innerHTML;
+      // dom 节点的内部的 HTML 代码通过 innerHTML 属性获取...所获得的 HTML 代码是 字符串 格式的。
+      console.log(html);
+      el.innerHTML = '<ul><li>Good!</li></ul>';
+    </script>
+  </body>
+</html>
