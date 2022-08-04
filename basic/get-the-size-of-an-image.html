@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #test {
+        width: 300px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"><img id="test" src="../assets/pic1.png" alt="猫猫" /></div>
+    <script>
+      const container = document.querySelector('#app');
+      const image = document.querySelector('#test');
+      const naturalWidth = image.naturalWidth;
+      const naturalHeight = image.naturalHeight;
+      console.log('原始尺寸:', naturalWidth, naturalHeight);
+      const width = image.width;
+      const height = image.height;
+      console.log('展示尺寸:', width, height);
+      // 上述是已加载完成后的图片尺寸计算方式，用来计算未加载完成图片尺寸的方式见下
+      const calculateSize = function (url) {
+        return new Promise((resolve, reject) => {
+          const image = document.createElement('img');
+          image.addEventListener('load', (e) => {
+            resolve({
+              width: e.target.width,
+              height: e.target.height,
+              image,
+            });
+          });
+          image.addEventListener('error', () => {
+            reject();
+          });
+          image.src = url;
+        });
+      };
+      const asyncImage = calculateSize('../assets/pic1.png').then((data) => {
+        const width = data.width;
+        const height = data.height;
+        console.log('异步图片的尺寸', width, height);
+        container.append(data.image);
+      });
+    </script>
+  </body>
+</html>
